@@ -1,3 +1,5 @@
+// Some reusable auth functions set for Signup and Login Screen.
+
 import { auth, db } from './firebaseConfig';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc, updateDoc } from 'firebase/firestore';
@@ -12,7 +14,7 @@ export const signUpUser = async (email, password) => {
         name: "",
         job: "",
         interests: "",
-        avatar: 0,
+        avatar: 0,  // Temporary placeholding for real image
         createdAt: new Date()
     });
 

@@ -25,11 +25,11 @@ export default function AppNavigator() {
       setLoading(false);
     });
 
-    return unsubscribe; // clean up on unmount
+    return unsubscribe; 
   }, []);
 
   if (loading) {
-    // Could show a splash screen or loading spinner here
+    console.log("loading");
     return null;
   }
 

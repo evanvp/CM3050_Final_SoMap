@@ -5,7 +5,7 @@ import { signUpUser } from '../config/authHelper';
 export default function SignupScreen({ navigation }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState(''); // New state for error
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleSignup = async () => {
         setErrorMessage(''); // clear previous error

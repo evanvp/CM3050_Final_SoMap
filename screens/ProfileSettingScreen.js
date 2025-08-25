@@ -6,14 +6,15 @@ import { doc, getDoc, setDoc } from 'firebase/firestore';
 export default function ProfileSettingsScreen({ navigation }) {
     const [profile, setProfile] = useState({ name: '', job: '', interests: '' });
 
+    // fetch user profile from firestore
     useEffect(() => {
         const fetchProfile = async () => {
-        const uid = auth.currentUser.uid;
-        const docRef = doc(db, "users", uid);
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-            setProfile(docSnap.data());
-        }
+            const uid = auth.currentUser.uid;
+            const docRef = doc(db, "users", uid);
+            const docSnap = await getDoc(docRef);
+            if (docSnap.exists()) {
+                setProfile(docSnap.data());
+            }
         };
         fetchProfile();
     }, []);
@@ -51,7 +52,7 @@ export default function ProfileSettingsScreen({ navigation }) {
             style={styles.input}
         />
 
-        <Button title="Save" onPress={handleSave} />
+        <Button style={styles.button} title="Save" onPress={handleSave} />
         </View>
     );
 }
